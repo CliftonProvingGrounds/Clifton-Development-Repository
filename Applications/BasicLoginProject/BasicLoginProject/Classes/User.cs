@@ -8,6 +8,9 @@ namespace BasicLoginProject.Classes
     /*This Method is the best method. It is the most secure method I have ever seen*/
     public class User
     {
+        public String username { get; set; }
+        public String password { get; set; }
+        public String role { get; set; }
 
         public User() { }
 
@@ -24,12 +27,10 @@ namespace BasicLoginProject.Classes
             this.password = password;
             this.role = role;
         }
-        public String username { get; set; }
-        public String password { get; set; }
 
-        public String role { get; set; }
         public override bool Equals(object obj)
         {
+            //Casting Variable as Type User
             var user = obj as User;
 
             if (user == null)
