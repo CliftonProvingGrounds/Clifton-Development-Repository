@@ -14,6 +14,7 @@ namespace BasicLoginProject.Classes
             //encrypt your shit
             return AddUser(new User(username, password, "Default"));
         }
+
         public static bool AddUser(User user)
         {
             try

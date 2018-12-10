@@ -26,6 +26,7 @@ namespace BasicLoginProject.Classes
                 cmd.Parameters.Add(u_name);
                 cmd.Parameters.Add(p_word);
                 cmd.Parameters.Add(u_role);
+
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -74,6 +75,7 @@ namespace BasicLoginProject.Classes
 
         public static bool AddUser(string username, string password )
         {
+            //unsire why it's returning false, I'll need to look into this. Debugging is not possible unless I can get my databases
             AddUser(new Classes.User(username, password, "Default"));
             return false;
         }

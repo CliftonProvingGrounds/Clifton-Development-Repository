@@ -13,6 +13,7 @@ namespace BasicLoginProject
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            // This variable needs to be a private variable inside of the config
             int n = 9;
             UserManagerController.AddUser(new User("admin@mail.com",Enigma.PuffPuffHashPassword("Institute",Enigma.CreateSalt(n)),"Admin"));
             UserManagerController.AddUser(new User("tester@mail.com", Enigma.PuffPuffHashPassword("Tester", Enigma.CreateSalt(n)), "Default"));

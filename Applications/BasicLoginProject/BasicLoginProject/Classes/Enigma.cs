@@ -26,7 +26,8 @@ namespace BasicLoginProject.Classes
             return hashedPwd;
         }
 
-        public static String Atabash() {
+        public static String CreateAtabashPassword(string pwd) {
+            string ret = "";
             return null;
         }
     }

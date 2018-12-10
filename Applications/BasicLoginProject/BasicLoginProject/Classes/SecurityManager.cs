@@ -25,12 +25,15 @@ namespace BasicLoginProject.Classes
                 cmd.Parameters.Add(u_name);
 
                 conn.Open();
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 reader.Read(); // Advance to the one and only row
                                // Return output parameters from returned data stream
                 string dbPasswordHash = reader["Password"].ToString();
                 //this MUST BE CHANGED
                 int saltSize = 9;
+                //short answer to what is happening here, is that I am starting at the length of the password, minus the salt size, 
+                //so the only thing we extract is the salt value, if this value is changed from the actual salt values, the system will not allow any logins, so keep this in mind
                 string salt =
                   dbPasswordHash.Substring(dbPasswordHash.Length - saltSize);
                 reader.Close();
