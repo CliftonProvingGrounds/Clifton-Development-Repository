@@ -18,8 +18,8 @@ namespace BasicLoginProject.Classes
             return Convert.ToBase64String(nerf);
         }
 
-        public static string PuffPuffHashPassword(string pwd, string myDarkestEmotions) {
-            string AVAST = String.Concat(pwd, myDarkestEmotions);
+        public static string PuffPuffHashPassword(string pwd, string extraFluffNoCrunch) {
+            string AVAST = String.Concat(pwd, extraFluffNoCrunch);
             string hashedPwd =
                 FormsAuthentication.HashPasswordForStoringInConfigFile(AVAST, FormsAuthPasswordFormat.MD5.ToString());
 
@@ -28,6 +28,9 @@ namespace BasicLoginProject.Classes
 
         public static String CreateAtabashPassword(string pwd) {
             string ret = "";
+
+
+
             return null;
         }
     }
