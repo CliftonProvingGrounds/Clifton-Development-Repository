@@ -9,11 +9,13 @@ namespace BasicLoginProject.Classes
 {
     public class SecurityManager : Enigma
     {
+        //verifies user object Credentials. Should be cleaned up for the sake of consistancy
         public static bool VerifyCreds(string user, string pwd) {
             bool match = false;
             SqlConnection conn = null;
             try
             {
+                //the SQL connection Sqring is obficated for the sake of security, so keep it as is. But bear in mind that if we want to change or add a connection string, we need to go into web.config 
                 conn = new SqlConnection();
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["DBContextManager"].ConnectionString;
 

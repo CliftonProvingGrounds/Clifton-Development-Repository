@@ -36,7 +36,7 @@ namespace BasicLoginProject.Classes
             try
             {
                 ret = UserManager.GetUsers();
-                //this is one of three approachs to logging in a user, the other two are a direct sql command, or checking the results of GetUser
+                //this is one of three approachs to logging in a user, the other two are a direct sql command, or checking the results of GetUser manually form this function.
                 return SecurityManager.VerifyCreds(user);
             }
             catch (Exception ex)

@@ -19,10 +19,8 @@ namespace BasicLoginProject
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            //UserManagerController will validate the information inputed into the forms, cross compare that to the DB, which I do not have access to at the moment.
-            if (UserManagerController.ValidateUser(new User(
-                username.Text, password.Text)
-                ))
+            //UserManagerController will validate the information inputed into the forms, cross compare that to the DB, which I do not have access to at the moment. However, we must assume there are no rules in place, aside from no nulls for the columns in users
+            if (UserManagerController.ValidateUser(new User(username.Text, password.Text)))
             {
 
                 //FormsAuthentication.RedirectFromLoginPage(username.Text, Persist.Checked);
@@ -32,8 +30,6 @@ namespace BasicLoginProject
             else
             {
                 msg.Text = "Invalid Credentials";
-
-
             }
         }
     }

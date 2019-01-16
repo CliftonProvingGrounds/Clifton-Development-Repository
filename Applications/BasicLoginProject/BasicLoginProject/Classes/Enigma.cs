@@ -22,7 +22,6 @@ namespace BasicLoginProject.Classes
             string AVAST = String.Concat(pwd, extraFluffNoCrunch);
             string hashedPwd =
                 FormsAuthentication.HashPasswordForStoringInConfigFile(AVAST, FormsAuthPasswordFormat.MD5.ToString());
-
             return hashedPwd;
         }
 
